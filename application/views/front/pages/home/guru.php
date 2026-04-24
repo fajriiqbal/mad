@@ -78,7 +78,8 @@
     <?php if (!empty($guru)) : ?>
       <?php foreach ($guru as $g): ?>
         <article class="teacher-profile">
-          <img src="<?= base_url('img/identitas/' . $g->photo_g) ?>" alt="<?= $g->Nama_g ?>">
+          <?php $photo = !empty($g->photo_g) && is_file(FCPATH . 'img/identitas/' . $g->photo_g) ? base_url('img/identitas/' . $g->photo_g) : base_url('img/banner_area/bg.jpg'); ?>
+          <img src="<?= $photo ?>" alt="<?= $g->Nama_g ?>">
           <div class="body">
             <div class="name"><?= $g->Nama_g ?></div>
             <div class="mapel"><?= $g->Mapel_g ?></div>

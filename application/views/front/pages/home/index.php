@@ -123,7 +123,6 @@
     line-height: 1.9;
   }
 
-  .teacher-card,
   .news-card{
     height: 100%;
     overflow: hidden;
@@ -131,33 +130,6 @@
     border: 1px solid var(--border);
     border-radius: 22px;
     box-shadow: var(--shadow-soft);
-  }
-
-  .teacher-card{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 18px;
-  }
-
-  .teacher-avatar{
-    width: 64px;
-    height: 64px;
-    border-radius: 20px;
-    object-fit: cover;
-    flex: none;
-    border: 1px solid var(--border);
-  }
-
-  .teacher-name{
-    margin: 0;
-    font-weight: 700;
-  }
-
-  .teacher-role{
-    margin-top: 4px;
-    color: var(--muted);
-    font-size: 13px;
   }
 
   .news-card img{
@@ -245,10 +217,6 @@
     .shortcut-card span{
       font-size: 11px;
       line-height: 1.4;
-    }
-
-    .teacher-card{
-      align-items: flex-start;
     }
 
     .section-card{
@@ -349,11 +317,6 @@
       <strong>Berita</strong>
       <span>Pembaruan informasi dan kegiatan terbaru.</span>
     </a>
-    <a class="shortcut-card" href="<?= base_url() ?>#berita">
-      <div class="shortcut-icon"><i class="fas fa-star"></i></div>
-      <strong>Prestasi</strong>
-      <span>Informasi prestasi madrasah yang ditampilkan pada bagian berita unggulan.</span>
-    </a>
   </div>
 </section>
 
@@ -376,32 +339,6 @@
         <img src="<?= base_url('img/sambutan/' . $sambutan->photo) ?>" alt="Sambutan">
       </div>
     </div>
-  </div>
-</section>
-
-<section class="content-section section-card mx-3 mx-md-4">
-  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
-    <div>
-      <div class="section-eyebrow"><i class="fas fa-users"></i> Pengajar</div>
-      <h2 class="section-title">Tenaga Pendidik</h2>
-      <p class="section-subtitle mb-0">Informasi tenaga pendidik ditampilkan dalam format kartu yang ringkas dan tertata.</p>
-    </div>
-  </div>
-
-  <div class="grid-3">
-    <?php if (!empty($guru)) : ?>
-      <?php foreach ($guru as $g): ?>
-        <div class="teacher-card">
-          <img src="<?= base_url('img/identitas/' . $g->photo_g) ?>" class="teacher-avatar" alt="<?= $g->Nama_g ?>">
-          <div>
-            <p class="teacher-name"><?= $g->Nama_g ?></p>
-            <div class="teacher-role"><?= $g->Mapel_g ?></div>
-          </div>
-        </div>
-      <?php endforeach; ?>
-    <?php else: ?>
-      <div class="surface-card p-4 text-center text-muted">Data guru belum tersedia.</div>
-    <?php endif; ?>
   </div>
 </section>
 

@@ -23,7 +23,6 @@ class Home extends CI_Controller {
 		$data['sambutan'] = $this->sambutan->getData();
 		$data['berita']	= $this->berita->getLastNews();
 		$data['jurusan']	= $this->background->getData();
-		$data['guru'] = $this->guru->getAllGuru();
 		$data['page']		= 'home/index';
 		$data['breadcrumb'] = breadcrumb([
             ['title' => 'Beranda', 'url' => base_url('home')]
