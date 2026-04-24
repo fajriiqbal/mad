@@ -8,7 +8,7 @@
       tableBerita = $('#tableBerita').DataTable({
          processing: true,
          serverSide: true,
-         order: [4, 'desc'],
+         order: [[4, 'desc']],
          ajax: {
             'url': "<?= base_url('berita/ajax_list') ?>",
             'type': "POST"
