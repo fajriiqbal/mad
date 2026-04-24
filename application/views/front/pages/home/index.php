@@ -1,4 +1,3 @@
-<head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -122,10 +121,6 @@
       }
     }
   </style>
-</head>
-
-<body>
-
 <!-- HERO -->
 <div class="hero">
   <div class="container">
@@ -164,7 +159,7 @@
 
   <div class="menu-container">
 
-    <div class="menu-item" onclick="location.href='<?= base_url('home/sambutan') ?>'">
+    <div class="menu-item" onclick="location.href='<?= base_url() ?>#sambutan'">
       <i class="fas fa-user"></i>
       <div>Sambutan</div>
     </div>
@@ -194,17 +189,17 @@
       <div>Guru</div>
     </div>
 
-    <div class="menu-item" onclick="location.href='<?= base_url('home/agenda')?>'">
+    <div class="menu-item" onclick="location.href='<?= base_url('agenda') ?>'">
       <i class="fas fa-calendar-alt"></i>
       <div>Agenda</div>
     </div>
 
-    <div class="menu-item" onclick="location.href='<?= base_url('home/pengumuman')?>'">
+    <div class="menu-item" onclick="location.href='<?= base_url('blog') ?>'">
       <i class="fas fa-bullhorn"></i>
       <div>Info</div>
     </div>
 
-    <div class="menu-item" onclick="location.href='<?= base_url('home/prestasi')?>'">
+    <div class="menu-item" onclick="location.href='<?= base_url() ?>#berita'">
       <i class="fas fa-trophy"></i>
       <div>Prestasi</div>
     </div>
@@ -257,7 +252,7 @@
 </div>
 
 <!-- BERITA -->
-<div class="container mt-5 mb-5">
+<div id="berita" class="container mt-5 mb-5">
   <h5 class="text-center">Berita Terbaru</h5>
 
   <div class="row mt-4">
@@ -276,5 +271,3 @@
   </div>
 
 </div>
-
-</body>

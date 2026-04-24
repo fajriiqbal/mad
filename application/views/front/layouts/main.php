@@ -51,7 +51,7 @@ nav.bottom-nav a.active{
   height: 60px;
   border-radius: 50%; /* jadi lingkaran seperti logo */
 
-  background: linear-gradient(135deg, #25D366, #128C7E); */
+  background: linear-gradient(135deg, #25D366, #128C7E);
   color: white;
 
   display: flex;
@@ -113,7 +113,7 @@ nav.bottom-nav a.active{
     <i class="fas fa-user"></i>
     <span>Profil</span>
   </a>
-  <a href="<?= base_url('ppdb/form') ?>" class="<?= (in_array($title,['Administrasi Perkantoran','Akutansi','Pemasaran']))?'active':'' ?>">
+  <a href="<?= base_url('ppdb/form') ?>" class="<?= (in_array($page ?? '', ['ppdb/form','ppdb/inforpmb','ppdb/hasilpmb']))?'active':'' ?>">
     <i class="fas fa-file-alt"></i>
     <span>PPDB</span>
   </a>
