@@ -19,9 +19,9 @@
     --border: rgba(15, 23, 42, 0.07);
     --text: #122033;
     --muted: #667085;
-    --accent: #1d4ed8;
-    --accent-soft: rgba(29, 78, 216, 0.10);
-    --success: #0f766e;
+    --accent: #0f766e;
+    --accent-soft: rgba(15, 118, 110, 0.10);
+    --success: #166534;
     --shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
     --shadow-soft: 0 8px 18px rgba(15, 23, 42, 0.05);
     --radius-xl: 28px;
@@ -36,7 +36,7 @@
   body{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background:
-      radial-gradient(circle at top left, rgba(29, 78, 216, 0.06), transparent 28%),
+      radial-gradient(circle at top left, rgba(22, 101, 52, 0.06), transparent 28%),
       radial-gradient(circle at top right, rgba(15, 118, 110, 0.06), transparent 25%),
       linear-gradient(180deg, #fbfcfe 0%, #f6f8fb 42%, #eef3f8 100%);
     color: var(--text);
@@ -239,7 +239,7 @@
     padding: 26px;
     border-radius: 24px;
     background:
-      linear-gradient(135deg, rgba(29, 78, 216, 0.09), rgba(15, 118, 110, 0.08)),
+      linear-gradient(135deg, rgba(15, 118, 110, 0.09), rgba(22, 101, 52, 0.08)),
       rgba(255,255,255,0.9);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-soft);
@@ -278,7 +278,7 @@
   }
 
   .soft-btn-primary{
-    background: linear-gradient(135deg, #1d4ed8, #0f766e);
+    background: linear-gradient(135deg, #0f766e, #166534);
     color: #fff;
   }
 
@@ -419,7 +419,7 @@ nav.bottom-nav{
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 3px solid rgba(29, 78, 216, 0.14);
+    border: 3px solid rgba(15, 118, 110, 0.14);
     border-top-color: var(--accent);
     animation: pageSpin 0.8s linear infinite;
   }
@@ -609,9 +609,7 @@ nav.bottom-nav{
 <script>
   (function () {
     var overlay = document.getElementById('pageLoadingOverlay');
-    var isMobile = window.matchMedia('(max-width: 767.98px)').matches;
-
-    if (!overlay || !isMobile) {
+    if (!overlay) {
       return;
     }
 
@@ -637,7 +635,12 @@ nav.bottom-nav{
       overlay.setAttribute('aria-hidden', 'false');
     }
 
-    document.querySelectorAll('nav.bottom-nav a, .navbar a').forEach(function (link) {
+    function hideOverlay() {
+      overlay.classList.remove('is-visible');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function (event) {
         if (!isInternalLink(link)) {
           return;
@@ -648,13 +651,16 @@ nav.bottom-nav{
           return;
         }
 
+        if (link.target === '_blank' || link.hasAttribute('download')) {
+          return;
+        }
+
         showOverlay();
-      }, { passive: true });
+      });
     });
 
     window.addEventListener('pageshow', function () {
-      overlay.classList.remove('is-visible');
-      overlay.setAttribute('aria-hidden', 'true');
+      hideOverlay();
     });
   })();
 </script>
