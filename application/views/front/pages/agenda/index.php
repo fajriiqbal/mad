@@ -1,15 +1,23 @@
-<!--================Home Banner Area =================-->
-<div class="jumbotron banner_area jumbotron-fluid" style="background-image: url(<?= base_url('img/banner_area/bg.jpg') ?>); ">
-	<div class="container">
-		<h1 class="display-4 my-auto text-light text-center">Agenda</h1>
-	</div>
-</div>
-<!--================End Home Banner Area =================-->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-eyebrow"><i class="fas fa-calendar-alt"></i> Agenda Sekolah</div>
+    <h1 class="page-hero-title">Agenda</h1>
+    <p class="page-hero-text">
+      Informasi agenda ditampilkan dengan layout yang lembut dan fokus ke isi agar selaras dengan menu lainnya.
+    </p>
+  </div>
+</section>
 
-<!-- Content -->
-<div class="content mt-5 mb-5 pt-5 pb-5">
-	<div class="container text-center">
-		<img src="<?= base_url('img/agenda/' . $agenda->photo) ?>" class="img-fluid">
-	</div>
-</div>
-<!-- End of Content -->
+<?php echo $breadcrumb; ?>
+
+<section class="page-content">
+  <div class="section-card text-center">
+    <?php if (!empty($agenda)) : ?>
+      <div class="media-frame">
+        <img src="<?= base_url('img/agenda/' . $agenda->photo) ?>" alt="Agenda sekolah">
+      </div>
+    <?php else: ?>
+      <div class="surface-card p-4 text-muted">Agenda belum tersedia.</div>
+    <?php endif; ?>
+  </div>
+</section>

@@ -47,34 +47,6 @@
     gap: 12px;
   }
 
-  .hero-stats{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 8px;
-  }
-
-  .hero-stat{
-    background: rgba(255,255,255,0.7);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 16px;
-    box-shadow: var(--shadow-soft);
-  }
-
-  .hero-stat strong{
-    display: block;
-    font-size: 1.1rem;
-    color: var(--text);
-  }
-
-  .hero-stat span{
-    display: block;
-    margin-top: 4px;
-    font-size: 12px;
-    color: var(--muted);
-  }
-
   .carousel-shell{
     padding: 12px;
     border-radius: 28px;
@@ -230,8 +202,7 @@
   }
 
   @media (max-width: 991.98px){
-    .shortcut-grid,
-    .hero-stats{
+    .shortcut-grid{
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
@@ -247,7 +218,6 @@
       align-items: stretch;
     }
 
-    .hero-stats,
     .shortcut-grid{
       grid-template-columns: 1fr;
     }
@@ -275,20 +245,6 @@
           <a href="<?= base_url('profil/sejarah') ?>" class="soft-btn soft-btn-outline">
             <i class="fas fa-info-circle mr-2"></i> Profil Sekolah
           </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <strong><?= isset($guru) ? count($guru) : 0 ?></strong>
-            <span>Tenaga pendidik</span>
-          </div>
-          <div class="hero-stat">
-            <strong><?= isset($banners) ? count($banners) : 0 ?></strong>
-            <span>Highlight utama</span>
-          </div>
-          <div class="hero-stat">
-            <strong><?= isset($berita) ? count($berita) : 0 ?></strong>
-            <span>Berita terbaru</span>
-          </div>
         </div>
       </div>
     </div>

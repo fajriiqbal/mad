@@ -1,15 +1,15 @@
-<!--================Home Banner Area =================-->
-<div class="jumbotron banner_area jumbotron-fluid" style="background-image: url(<?= base_url('img/banner_area/bg.jpg') ?>); ">
-	<div class="container">
-		<h1 class="display-4 my-auto text-light text-center">Tata Tertib</h1>
-	</div>
-</div>
-<!--================End Home Banner Area =================-->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-eyebrow"><i class="fas fa-clipboard-check"></i> Tata Tertib</div>
+    <h1 class="page-hero-title">Tata Tertib</h1>
+    <p class="page-hero-text">
+      Dokumen tata tertib ditampilkan dalam bingkai yang bersih agar tetap nyaman dipandang dan mudah dibuka di mobile.
+    </p>
+  </div>
+</section>
 
-<!-- Content -->
-<div class="content mt-5 mb-5 pb-5 pt-5">
-	<div class="container text-center">
-		<img src="<?= base_url('img/tatatertib/tata-tertib.png') ?>" class="img-fluid">
-	</div>
-</div>
-<!-- End of Content -->
+<section class="page-content">
+  <div class="section-card text-center">
+    <img src="<?= base_url('img/tatatertib/tata-tertib.png') ?>" class="img-fluid" alt="Tata tertib">
+  </div>
+</section>
