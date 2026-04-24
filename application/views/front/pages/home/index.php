@@ -219,11 +219,40 @@
     }
 
     .shortcut-grid{
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .shortcut-card{
+      min-height: 108px;
+      padding: 12px;
+      gap: 8px;
+      border-radius: 18px;
+    }
+
+    .shortcut-icon{
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+    }
+
+    .shortcut-card strong{
+      font-size: 0.9rem;
+      line-height: 1.25;
+    }
+
+    .shortcut-card span{
+      font-size: 11px;
+      line-height: 1.4;
     }
 
     .teacher-card{
       align-items: flex-start;
+    }
+
+    .section-card{
+      padding: 18px;
     }
   }
 </style>

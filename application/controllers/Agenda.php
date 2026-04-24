@@ -7,6 +7,7 @@ class Agenda extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('jadwal_model', 'jadwal');
+		$this->load->helper('bc_helper');
 	}
 	
 	public function index()
@@ -14,6 +15,10 @@ class Agenda extends CI_Controller {
 		$data['title']		= 'Agenda';
 		$data['page']		= 'agenda/index';
 		$data['agenda']	= $this->jadwal->getData();
+		$data['breadcrumb'] = breadcrumb([
+			['title' => 'Beranda', 'url' => base_url('home')],
+			['title' => 'Agenda', 'url' => base_url('agenda')]
+		]);
 		$this->load->view('front/layouts/main', $data);
 	}
 
