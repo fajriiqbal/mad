@@ -31,6 +31,8 @@ class Struktur extends CI_Controller {
 			$data['form_action']	= base_url('struktur/edit/' . $id);
 			$this->load->view('back/layouts/main', $data);
 		}else{
+			$data = [];
+
 			if(!empty($_FILES['photo']['name'])){
 				$upload 	 = $this->struktur->uploadImage();
 
@@ -44,7 +46,14 @@ class Struktur extends CI_Controller {
 					$data['photo'] = $upload;
 				 }else{
 					redirect(base_url("struktur/edit/$id"));
+					return;
 				 }
+			}
+
+			if(empty($data)){
+				$this->session->set_flashdata('success', 'Tidak ada perubahan pada struktur organisasi.');
+				redirect(base_url('struktur'));
+				return;
 			}
 
 			$this->struktur->updateData($id, $data);

@@ -98,6 +98,10 @@ class Banner extends CI_Controller {
 			
 			if(!empty($_FILES['photo']['name'])){
 				$upload = $this->banner->uploadImage();
+				if(!$upload){
+					redirect(base_url('banner/add'));
+					return;
+				}
 				$data['photo'] = $upload;
 			}
 			

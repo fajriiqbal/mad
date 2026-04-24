@@ -26,7 +26,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title"><?= $g->Nama_g ?></h5>
                         <p class="card-text"><?= $g->Mapel_g ?></p>
-                        <a href="#" class="btn btn-primary">Lihat Detail</a>
+                        <a href="<?= base_url('home/guru') ?>" class="btn btn-primary">Lihat Detail</a>
                     </div>
                 </div>
             </div>

@@ -213,7 +213,7 @@
 </div>
 
 <!-- SAMBUTAN -->
-<div class="container sambutan mt-4">
+<div id="sambutan" class="container sambutan mt-4">
   <div class="row align-items-center">
 
     <div class="col-md-8">

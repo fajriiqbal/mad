@@ -31,6 +31,8 @@ class Background extends CI_Controller {
 			$data['form_action']	= base_url('background/edit/' . $id);
 			$this->load->view('back/layouts/main', $data);
 		}else{
+			$data = [];
+
 			if(!empty($_FILES['photo']['name'])){
 				$upload 	 = $this->background->uploadImage();
 
@@ -44,7 +46,14 @@ class Background extends CI_Controller {
 					$data['photo'] = $upload;
 				 }else{
 					redirect(base_url("background/edit/$id"));
+					return;
 				 }
+			}
+
+			if(empty($data)){
+				$this->session->set_flashdata('success', 'Tidak ada perubahan pada background jurusan.');
+				redirect(base_url('background'));
+				return;
 			}
 
 			$this->background->updateData($id, $data);

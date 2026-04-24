@@ -138,5 +138,16 @@ nav.bottom-nav a.active{
 <script src="<?= base_url('asset/vendor/jquery/jquery.min.js') ?>"></script>
 <script src="<?= base_url('asset/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
+<?php if (!empty($scroll_to)) : ?>
+<script>
+  window.addEventListener('load', function () {
+    var target = document.getElementById('<?= $scroll_to ?>');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+</script>
+<?php endif; ?>
+
 </body>
 </html>

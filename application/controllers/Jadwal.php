@@ -31,6 +31,8 @@ class Jadwal extends CI_Controller {
 			$data['form_action']	= base_url('jadwal/edit/' . $id);
 			$this->load->view('back/layouts/main', $data);
 		}else{
+			$data = [];
+
 			if(!empty($_FILES['photo']['name'])){
 				$upload 	 = $this->jadwal->uploadImage();
 
@@ -44,7 +46,14 @@ class Jadwal extends CI_Controller {
 					$data['photo'] = $upload;
 				 }else{
 					redirect(base_url("jadwal/edit/$id"));
+					return;
 				 }
+			}
+
+			if(empty($data)){
+				$this->session->set_flashdata('success', 'Tidak ada perubahan pada agenda sekolah.');
+				redirect(base_url('jadwal'));
+				return;
 			}
 
 			$this->jadwal->updateData($id, $data);

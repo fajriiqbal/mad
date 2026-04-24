@@ -125,7 +125,7 @@ class Berita_model extends CI_Model {
 			'prev_link'           => '&lt',
 			'prev_tag_open'       => '<li class="page-item">',
 			'prev_tag_close'      => '</li>',
-			'next-link'           => '&gt',
+			'next_link'           => '&gt',
 			'next_tag_open'       => '<li class="page-item">',
 			'next_tag_close'      => '</li>',
 			'last_tag_open'       => '<li class="page-item">',

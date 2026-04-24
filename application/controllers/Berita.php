@@ -106,8 +106,12 @@ class Berita extends CI_Controller {
 			if(!empty($_FILES['photo']['name'])){
 				$imageName = url_title($data['title'], '-', true) . '-' . date('YmdHis');
 				$upload = $this->berita->uploadImage($imageName);
-				$this->_create_thumbs($upload);
-				$data['photo'] = $upload;
+				if($upload){
+					$this->_create_thumbs($upload);
+					$data['photo'] = $upload;
+				}else{
+					redirect(base_url('berita/add'));
+				}
 			}
 			
 			$this->berita->insert($data);
@@ -145,17 +149,16 @@ class Berita extends CI_Controller {
 			$data = [
 				'title' 		=> $this->input->post('title', true),
 				'seo_title' => slugify($this->input->post('title', true)),
-				'content' 	=> $this->input->post('content'),
+				'content' 	=> $this->input->post('content', true),
 				'is_active' => $this->input->post('is_active', true),
 				'date' 		=> date('Y-m-d'),
 			];
 
 			if(!empty($_FILES['photo']['name'])){
-				$imageName = url_title($data['name'], '-', true) . '-' . date('YmdHis');
+				$imageName = url_title($data['title'], '-', true) . '-' . date('YmdHis');
 				$upload = $this->berita->uploadImage($imageName);
-				$this->_create_thumbs($upload);
-
 				if($upload){
+					$this->_create_thumbs($upload);
 					$berita = $this->berita->getDataById($id);
 
 					if(file_exists('img/berita/' . $berita->photo) && $berita->photo){

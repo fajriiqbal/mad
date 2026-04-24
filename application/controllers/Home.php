@@ -14,16 +14,23 @@ class Home extends CI_Controller {
 		$this->load->model('Guru_model','guru');
 		$this->load->helper('bc_helper');
 	}
+
+	private function _baseData()
+	{
+		return [
+			'brand'     => $this->identitas->getData(),
+			'banners'   => $this->banner->getBanner(),
+			'sambutan'  => $this->sambutan->getData(),
+			'berita'    => $this->berita->getLastNews(),
+			'jurusan'   => $this->background->getData(),
+			'guru'      => $this->guru->getAllGuru(),
+		];
+	}
 	
 	public function index()
 	{
+		$data = $this->_baseData();
 		$data['title']		= 'Beranda';
-		$data['brand']		= $this->identitas->getData();
-		$data['banners'] 	= $this->banner->getBanner();
-		$data['sambutan'] = $this->sambutan->getData();
-		$data['berita']	= $this->berita->getLastNews();
-		$data['jurusan']	= $this->background->getData();
-		$data['guru'] = $this->guru->getAllGuru();
 		$data['page']		= 'home/index';
 		$data['breadcrumb'] = breadcrumb([
             ['title' => 'Beranda', 'url' => base_url('home')]
@@ -31,6 +38,20 @@ class Home extends CI_Controller {
 
 		$this->load->view('front/layouts/main', $data);
 	}
+
+	public function sambutan()
+	{
+		$data = $this->_baseData();
+		$data['title'] = 'Beranda';
+		$data['page'] = 'home/index';
+		$data['scroll_to'] = 'sambutan';
+		$data['breadcrumb'] = breadcrumb([
+			['title' => 'Beranda', 'url' => base_url('home')]
+		]);
+
+		$this->load->view('front/layouts/main', $data);
+	}
+
 	public function ekstra()
 	{
 		$data['title']		= 'Ekstrakurikuler';
@@ -42,6 +63,7 @@ class Home extends CI_Controller {
 
 		$this->load->view('front/layouts/main', $data);
 	}
+
 	public function guru()
 	{
 		$data['title']		= 'Guru';
@@ -53,6 +75,21 @@ class Home extends CI_Controller {
 		$data['guru'] = $this->guru->getAllGuru();
 
 		$this->load->view('front/layouts/main', $data);
+	}
+
+	public function agenda()
+	{
+		redirect('agenda');
+	}
+
+	public function pengumuman()
+	{
+		redirect('blog');
+	}
+
+	public function prestasi()
+	{
+		redirect('blog');
 	}
 
 }

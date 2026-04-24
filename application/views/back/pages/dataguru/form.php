@@ -36,7 +36,10 @@
     <div class="form-group row">
     <label for="photo" class="col-sm-2 col-form-label">Foto</label>
     <div class="col-sm-8">
-        <input name="photo" type="file" class="form-control-file" required>
+        <?php if (!empty($input->photo_g)) : ?>
+            <img src="<?= base_url('img/identitas/' . $input->photo_g) ?>" alt="<?= isset($input->Nama_g) ? $input->Nama_g : '' ?>" height="120" class="mb-3">
+        <?php endif; ?>
+        <input name="photo" type="file" class="form-control-file">
         <small><span class="text-danger">*</span> Maksimal ukuran gambar adalah 3 MB</small>
         <br><br>
         <?php if ($this->session->flashdata('image_error')) : ?>

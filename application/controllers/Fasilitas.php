@@ -94,6 +94,10 @@ class Fasilitas extends CI_Controller {
 			if(!empty($_FILES['photo']['name'])){
 				$imageName = url_title($data['name'], '-', true) . '-' . date('YmdHis');
 				$upload = $this->fasilitas->uploadImage($imageName);
+				if(!$upload){
+					redirect(base_url('fasilitas/add'));
+					return;
+				}
 				$data['photo'] = $upload;
 			}
 			

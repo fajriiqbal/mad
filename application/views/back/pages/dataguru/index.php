@@ -52,6 +52,9 @@
 									<img src="<?= base_url('img/identitas/' . $g->photo) ?>" class="img-responsive" style="max-height:150px; max-width:150px";>
 								</td> -->
 								<td>
+									<a href="<?= base_url('dataguru/detail/' . $g->id); ?>" class="btn btn-info btn-sm text-light">
+										<i class="fas fa fa-eye"></i>
+									</a>
 									<a href="<?= base_url('dataguru/edit/' . $g->id); ?>" class="btn btn-warning btn-sm text-light">
 										<i class="fas fa fa-pencil-alt"></i>
 									</a>
@@ -59,8 +62,6 @@
 							</tr>
 						<?php endforeach; ?>
 								
-							</td>
-						</tr>			
 					</tbody>
 				</table>
 			</div>	
