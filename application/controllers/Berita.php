@@ -30,6 +30,7 @@ class Berita extends CI_Controller {
 
 	public function ajax_list()
    {
+      $this->output->set_content_type('application/json');
       $list = $this->my->get_datatables();
 		$data = [];
 		$no = 1;
@@ -61,7 +62,7 @@ class Berita extends CI_Controller {
       }
 
       $output = [
-         'draw'            => $_POST['draw'],
+         'draw'            => (int) $this->input->post('draw'),
          'recordsTotal'    => $this->my->count_all(),
          'recordsFiltered' => $this->my->count_filtered(),
          'data'            => $data
