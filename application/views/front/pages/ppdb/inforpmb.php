@@ -1,9 +1,9 @@
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="section-eyebrow"><i class="fas fa-clipboard-list"></i> PPDB</div>
-    <h1 class="page-hero-title">Informasi Pendaftaran</h1>
+    <h1 class="page-hero-title"><?= $ppdb->info_title ?? 'Informasi Pendaftaran' ?></h1>
     <p class="page-hero-text">
-      Ringkasan informasi PPDB disajikan secara resmi agar selaras dengan halaman publik lainnya.
+      <?= $ppdb->info_text ?? 'Ringkasan informasi PPDB disajikan secara resmi agar selaras dengan halaman publik lainnya.' ?>
     </p>
   </div>
 </section>

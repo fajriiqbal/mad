@@ -1,9 +1,9 @@
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="section-eyebrow"><i class="fas fa-user-plus"></i> PPDB</div>
-    <h1 class="page-hero-title">Penerimaan Peserta Didik Baru</h1>
+    <h1 class="page-hero-title"><?= $ppdb->hero_title ?? 'Penerimaan Peserta Didik Baru' ?></h1>
     <p class="page-hero-text">
-      Informasi pendaftaran disajikan secara resmi, rapi, dan mudah dipahami oleh calon peserta didik maupun orang tua.
+      <?= $ppdb->hero_text ?? 'Informasi pendaftaran disajikan secara resmi, rapi, dan mudah dipahami oleh calon peserta didik maupun orang tua.' ?>
     </p>
   </div>
 </section>
@@ -16,7 +16,7 @@
       <div class="shortcut-icon mb-3"><i class="fas fa-calendar-alt"></i></div>
       <h3 class="h5 font-weight-bold">Jadwal</h3>
       <p class="section-subtitle mb-0">
-        Pendaftaran dibuka sesuai ketentuan dan pengumuman resmi panitia.
+        <?= $ppdb->jadwal_text ?? 'Pendaftaran dibuka sesuai ketentuan dan pengumuman resmi panitia.' ?>
       </p>
     </div>
 
@@ -24,10 +24,16 @@
       <div class="shortcut-icon mb-3"><i class="fas fa-file-alt"></i></div>
       <h3 class="h5 font-weight-bold">Syarat</h3>
       <ul class="section-subtitle mb-0 pl-3">
-        <li>Fotokopi Ijazah / SKL</li>
-        <li>Fotokopi Akte Kelahiran</li>
-        <li>Fotokopi Kartu Keluarga</li>
-        <li>Pas Foto 3x4</li>
+        <?php
+          $syaratItems = preg_split("/\r\n|\r|\n/", (string) ($ppdb->syarat_items ?? ''));
+          $syaratItems = array_filter(array_map('trim', $syaratItems));
+          if (empty($syaratItems)) {
+            $syaratItems = ['Fotokopi Ijazah / SKL', 'Fotokopi Akte Kelahiran', 'Fotokopi Kartu Keluarga', 'Pas Foto 3x4'];
+          }
+        ?>
+        <?php foreach ($syaratItems as $item): ?>
+          <li><?= $item ?></li>
+        <?php endforeach; ?>
       </ul>
     </div>
 
@@ -37,7 +43,7 @@
       <p class="section-subtitle mb-3">
         Panitia PPDB MTs Sunan Kalijaga Tulung
       </p>
-      <a href="https://wa.me/6282241509229?text=Assalamu'alaikum%2C+saya+mau+tanya+tentang+PPDB" target="_blank" class="soft-btn soft-btn-outline">
+      <a href="<?= $ppdb->whatsapp_url ?? 'https://wa.me/6282241509229?text=Assalamu\'alaikum%2C+saya+mau+tanya+tentang+PPDB' ?>" target="_blank" class="soft-btn soft-btn-outline">
         Hubungi Panitia
       </a>
     </div>
@@ -48,7 +54,7 @@
     <p class="section-subtitle mx-auto">
       Silakan gunakan tautan berikut untuk mengisi formulir pendaftaran.
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScxUnVHKh1OPw1yCaXYvtp7CMwfrX1TFLjE49j6pwfvuk2Mqw/viewform?usp=header"
+    <a href="<?= $ppdb->form_url ?? 'https://docs.google.com/forms/d/e/1FAIpQLScxUnVHKh1OPw1yCaXYvtp7CMwfrX1TFLjE49j6pwfvuk2Mqw/viewform?usp=header' ?>"
        target="_blank"
        class="soft-btn soft-btn-primary mt-2">
        Isi Formulir Pendaftaran

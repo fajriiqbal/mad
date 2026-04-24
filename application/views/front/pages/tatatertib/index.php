@@ -10,6 +10,6 @@
 
 <section class="page-content">
   <div class="section-card text-center">
-    <img src="<?= base_url('img/tatatertib/tata-tertib.png') ?>" class="img-fluid" alt="Tata tertib">
+    <img src="<?= base_url('img/tatatertib/' . ($tata->photo ?? 'tata-tertib.png')) ?>" class="img-fluid" alt="Tata tertib">
   </div>
 </section>

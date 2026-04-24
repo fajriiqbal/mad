@@ -27,12 +27,12 @@
 
 	<li class="nav-item">
 		<?php if($submenu) : ?>
-			<a class="nav-link collapsed" href="<?= base_url() ?>" data-toggle="collapse" data-target="#collapse<?= $menu->id ?>" aria-expanded="true" aria-controls="collapse">
+			<a class="nav-link collapsed" href="#collapse<?= $menu->id ?>" data-toggle="collapse" data-target="#collapse<?= $menu->id ?>" aria-expanded="true" aria-controls="collapse<?= $menu->id ?>">
 				<i class="<?= $menu->icon ?>"></i>
 				<span><?= $menu->title ?></span>
 			</a>
 
-			<div id="collapse<?= $menu->id ?>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+			<div id="collapse<?= $menu->id ?>" class="collapse" aria-labelledby="heading<?= $menu->id ?>" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 				<?php foreach($submenu as $sm) : ?>
 					<a class="collapse-item" href="<?= base_url() . $sm->sub_url ?>"><?= $sm->sub_title ?></a>
@@ -48,6 +48,27 @@
 	</li>
 
 	<?php endforeach ?>
+
+	<!-- Divider -->
+	<hr class="sidebar-divider">
+
+	<div class="sidebar-heading">
+		Konten Tambahan
+	</div>
+
+	<li class="nav-item">
+		<a class="nav-link <?= (strpos($title ?? '', 'PPDB') !== false) ? 'active' : '' ?>" href="<?= base_url('ppdbmanage') ?>">
+			<i class="fas fa-fw fa-clipboard-list"></i>
+			<span>PPDB</span>
+		</a>
+	</li>
+
+	<li class="nav-item">
+		<a class="nav-link <?= (strpos($title ?? '', 'Tata Tertib') !== false) ? 'active' : '' ?>" href="<?= base_url('tatatertibmanage') ?>">
+			<i class="fas fa-fw fa-clipboard-check"></i>
+			<span>Tata Tertib</span>
+		</a>
+	</li>
 
 	<!-- Sidebar Toggler (Sidebar) -->
 	<div class="text-center d-none d-md-inline">
