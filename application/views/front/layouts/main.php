@@ -364,20 +364,78 @@ nav.bottom-nav{
   backdrop-filter: blur(16px);
   z-index:50;
 }
-nav.bottom-nav a{
-  text-decoration:none;
-  font-size:11px;
-  color:var(--muted);
-  display:flex;
+  nav.bottom-nav a{
+    text-decoration:none;
+    font-size:11px;
+    color:var(--muted);
+    display:flex;
   flex-direction:column;
   align-items:center;
   gap: 4px;
   min-width: 52px;
 }
-nav.bottom-nav a.active{
-  color:var(--accent);
-  font-weight:700;
-}
+  nav.bottom-nav a.active{
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  nav.bottom-nav a:active{
+    transform: translateY(1px) scale(0.97);
+    opacity: 0.82;
+  }
+
+  .page-loading-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(246, 248, 251, 0.72);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .page-loading-overlay.is-visible{
+    display: flex;
+    opacity: 1;
+  }
+
+  .page-loading-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 24px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    min-width: 180px;
+  }
+
+  .page-loading-spinner{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid rgba(29, 78, 216, 0.14);
+    border-top-color: var(--accent);
+    animation: pageSpin 0.8s linear infinite;
+  }
+
+  .page-loading-text{
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  @keyframes pageSpin{
+    to{
+      transform: rotate(360deg);
+    }
+  }
 
 /* FAB */
 .fab{
@@ -523,6 +581,14 @@ nav.bottom-nav a.active{
   <iconify-icon icon="logos:whatsapp-icon"></iconify-icon>
 </a>
 
+<!-- Mobile page loading overlay -->
+<div class="page-loading-overlay" id="pageLoadingOverlay" aria-hidden="true">
+  <div class="page-loading-card">
+    <div class="page-loading-spinner"></div>
+    <div class="page-loading-text">Membuka halaman...</div>
+  </div>
+</div>
+
 <!-- JS -->
 
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -539,6 +605,59 @@ nav.bottom-nav a.active{
   });
 </script>
 <?php endif; ?>
+
+<script>
+  (function () {
+    var overlay = document.getElementById('pageLoadingOverlay');
+    var isMobile = window.matchMedia('(max-width: 767.98px)').matches;
+
+    if (!overlay || !isMobile) {
+      return;
+    }
+
+    function isInternalLink(anchor) {
+      if (!anchor || !anchor.getAttribute) {
+        return false;
+      }
+
+      var href = anchor.getAttribute('href') || '';
+      if (!href || href === '#' || href.indexOf('javascript:') === 0) {
+        return false;
+      }
+
+      if (href.indexOf('http://') === 0 || href.indexOf('https://') === 0) {
+        return href.indexOf(window.location.origin) === 0;
+      }
+
+      return true;
+    }
+
+    function showOverlay() {
+      overlay.classList.add('is-visible');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    document.querySelectorAll('nav.bottom-nav a, .navbar a').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (!isInternalLink(link)) {
+          return;
+        }
+
+        var href = link.getAttribute('href') || '';
+        if (href.charAt(0) === '#') {
+          return;
+        }
+
+        showOverlay();
+      }, { passive: true });
+    });
+
+    window.addEventListener('pageshow', function () {
+      overlay.classList.remove('is-visible');
+      overlay.setAttribute('aria-hidden', 'true');
+    });
+  })();
+</script>
 
 </body>
 </html>
