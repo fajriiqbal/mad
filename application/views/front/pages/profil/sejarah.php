@@ -3,7 +3,7 @@
     <div class="section-eyebrow"><i class="fas fa-landmark"></i> Profil Sekolah</div>
     <h1 class="page-hero-title">Sejarah</h1>
     <p class="page-hero-text">
-      Kilas balik perjalanan MTs Sunan Kalijaga Tulung yang dirangkum dalam tampilan lebih tenang, bersih, dan mudah dibaca.
+      Kilas balik perjalanan MTs Sunan Kalijaga Tulung yang dirangkum secara resmi, jelas, dan mudah dibaca.
     </p>
   </div>
 </section>

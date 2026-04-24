@@ -3,7 +3,7 @@
     <div class="section-eyebrow"><i class="fas fa-calendar-alt"></i> Agenda Sekolah</div>
     <h1 class="page-hero-title">Agenda</h1>
     <p class="page-hero-text">
-      Informasi agenda ditampilkan dengan layout yang lembut dan fokus ke isi agar selaras dengan menu lainnya.
+      Informasi agenda ditampilkan secara ringkas dan tertata agar selaras dengan menu lainnya.
     </p>
   </div>
 </section>

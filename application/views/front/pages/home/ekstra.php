@@ -63,31 +63,31 @@
 
 <section class="extra-page">
   <div class="section-eyebrow"><i class="fas fa-running"></i> Ekstrakurikuler</div>
-  <h1 class="section-title mb-2">Wadah minat, bakat, dan karakter siswa</h1>
+  <h1 class="section-title mb-2">Sarana pengembangan minat, bakat, dan karakter siswa</h1>
   <p class="section-subtitle mb-4">
-    Tampilan dibuat seperti kartu pilihan agar tetap rapi dan meyakinkan, meski data kegiatan sedang diperbarui.
+    Informasi ini ditampilkan dalam bentuk kartu agar tetap rapi, mudah dibaca, dan selaras dengan tema website.
   </p>
 
   <div class="extra-grid">
     <article class="extra-card">
       <div class="extra-icon"><i class="fas fa-futbol"></i></div>
       <h3>Olahraga</h3>
-      <p>Pengembangan fisik, kerja sama tim, dan semangat kompetitif yang sehat.</p>
+      <p>Pengembangan kebugaran jasmani, kerja sama, dan sportivitas peserta didik.</p>
     </article>
     <article class="extra-card">
       <div class="extra-icon"><i class="fas fa-book-open"></i></div>
       <h3>Keagamaan</h3>
-      <p>Kegiatan yang memperkuat akhlak, hafalan, dan kebiasaan ibadah yang baik.</p>
+      <p>Penguatan akhlak, hafalan, dan pembiasaan ibadah yang baik.</p>
     </article>
     <article class="extra-card">
       <div class="extra-icon"><i class="fas fa-music"></i></div>
       <h3>Seni & Kreativitas</h3>
-      <p>Ruang ekspresi untuk seni, karya, dan keterampilan kreatif siswa.</p>
+      <p>Wadah ekspresi untuk seni, karya, dan keterampilan kreatif siswa.</p>
     </article>
     <article class="extra-card">
       <div class="extra-icon"><i class="fas fa-users"></i></div>
       <h3>Kepemimpinan</h3>
-      <p>Melatih keberanian, tanggung jawab, dan kemampuan berorganisasi.</p>
+      <p>Melatih keberanian, tanggung jawab, dan kemampuan berorganisasi peserta didik.</p>
     </article>
   </div>
 </section>

@@ -49,7 +49,7 @@
   <div class="section-eyebrow"><i class="fas fa-bullseye"></i> Profil</div>
   <h1 class="section-title mb-2">Visi & Misi</h1>
   <p class="section-subtitle mb-4">
-    Bagian ini disusun lebih elegan agar pengunjung mudah memahami arah sekolah pada tampilan desktop maupun mobile.
+    Bagian ini disusun agar pengunjung dapat memahami arah kebijakan dan tujuan madrasah secara jelas.
   </p>
 
   <div class="vision-grid">

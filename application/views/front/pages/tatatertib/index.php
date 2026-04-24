@@ -3,7 +3,7 @@
     <div class="section-eyebrow"><i class="fas fa-clipboard-check"></i> Tata Tertib</div>
     <h1 class="page-hero-title">Tata Tertib</h1>
     <p class="page-hero-text">
-      Dokumen tata tertib ditampilkan dalam bingkai yang bersih agar tetap nyaman dipandang dan mudah dibuka di mobile.
+      Dokumen tata tertib ditampilkan dalam bingkai yang bersih agar nyaman dibaca pada berbagai perangkat.
     </p>
   </div>
 </section>

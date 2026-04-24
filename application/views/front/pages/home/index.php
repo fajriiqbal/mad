@@ -261,11 +261,11 @@
   <div class="row align-items-center">
     <div class="col-lg-6">
       <div class="hero-intro">
-        <div class="hero-kicker"><i class="fas fa-school"></i> Website Resmi MTS Sunan Kalijaga</div>
-        <h1 class="hero-title">Belajar dalam suasana yang tenang, modern, dan berkarakter.</h1>
+        <div class="hero-kicker"><i class="fas fa-school"></i> Website Resmi MTs Sunan Kalijaga</div>
+        <h1 class="hero-title">Menyajikan informasi sekolah secara resmi, tertib, dan informatif.</h1>
         <p class="hero-text">
-          Kami menghadirkan informasi sekolah, pendaftaran, berita, dan kegiatan dalam tampilan yang lebih bersih,
-          lembut, dan mudah dipakai di desktop maupun mobile.
+          Website ini disusun untuk menyampaikan informasi sekolah, pendaftaran, berita, dan kegiatan secara
+          jelas, rapi, serta mudah diakses melalui perangkat desktop maupun mobile.
         </p>
         <div class="hero-actions">
           <a href="<?= base_url('ppdb/inforpmb') ?>" class="soft-btn soft-btn-primary">
@@ -306,9 +306,9 @@
   <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
     <div>
       <div class="section-eyebrow"><i class="fas fa-th-large"></i> Akses Cepat</div>
-      <h2 class="section-title">Menu utama yang paling sering dipakai</h2>
+      <h2 class="section-title">Menu utama yang paling sering diakses</h2>
       <p class="section-subtitle mb-0">
-        Semua pintasan dibuat besar dan jelas supaya nyaman digunakan di layar desktop maupun ponsel.
+        Seluruh pintasan disusun agar mudah digunakan dan tetap nyaman pada layar desktop maupun ponsel.
       </p>
     </div>
   </div>
@@ -317,42 +317,42 @@
     <a class="shortcut-card" href="<?= base_url() ?>#sambutan">
       <div class="shortcut-icon"><i class="fas fa-user-tie"></i></div>
       <strong>Sambutan</strong>
-      <span>Lihat pesan singkat dari pimpinan sekolah.</span>
+      <span>Baca sambutan resmi dari pimpinan madrasah.</span>
     </a>
     <a class="shortcut-card" href="<?= base_url('profil/visimisi') ?>">
       <div class="shortcut-icon"><i class="fas fa-bullseye"></i></div>
       <strong>Visi Misi</strong>
-      <span>Kenali arah, nilai, dan tujuan sekolah.</span>
+      <span>Ketahui arah, tujuan, dan nilai dasar madrasah.</span>
     </a>
     <a class="shortcut-card" href="<?= base_url('ppdb/inforpmb') ?>">
       <div class="shortcut-icon"><i class="fas fa-clipboard-list"></i></div>
       <strong>PPDB</strong>
-      <span>Informasi pendaftaran siswa baru.</span>
+      <span>Informasi resmi penerimaan peserta didik baru.</span>
     </a>
     <a class="shortcut-card" href="<?= base_url('home/ekstra') ?>">
       <div class="shortcut-icon"><i class="fas fa-running"></i></div>
       <strong>Ekstrakurikuler</strong>
-      <span>Kegiatan pengembangan minat dan bakat.</span>
+      <span>Sarana pengembangan minat, bakat, dan karakter siswa.</span>
     </a>
     <a class="shortcut-card" href="<?= base_url('home/guru') ?>">
       <div class="shortcut-icon"><i class="fas fa-chalkboard-teacher"></i></div>
       <strong>Guru</strong>
-      <span>Profil tenaga pendidik sekolah.</span>
+      <span>Profil tenaga pendidik dan kependidikan.</span>
     </a>
     <a class="shortcut-card" href="<?= base_url('agenda') ?>">
       <div class="shortcut-icon"><i class="fas fa-calendar-alt"></i></div>
       <strong>Agenda</strong>
-      <span>Lihat kegiatan sekolah yang akan datang.</span>
+      <span>Informasi agenda kegiatan madrasah.</span>
     </a>
     <a class="shortcut-card" href="<?= base_url('blog') ?>">
       <div class="shortcut-icon"><i class="fas fa-newspaper"></i></div>
       <strong>Berita</strong>
-      <span>Update informasi dan kabar terbaru.</span>
+      <span>Pembaruan informasi dan kegiatan terbaru.</span>
     </a>
     <a class="shortcut-card" href="<?= base_url() ?>#berita">
       <div class="shortcut-icon"><i class="fas fa-star"></i></div>
       <strong>Prestasi</strong>
-      <span>Capaiannya tampil di area berita unggulan.</span>
+      <span>Informasi prestasi madrasah yang ditampilkan pada bagian berita unggulan.</span>
     </a>
   </div>
 </section>
@@ -361,7 +361,10 @@
   <div class="row align-items-center">
     <div class="col-lg-7">
       <div class="section-eyebrow"><i class="fas fa-comment-dots"></i> Sambutan</div>
-      <h2 class="section-title mb-3">Pesan singkat untuk pengunjung website</h2>
+      <h2 class="section-title mb-3">Sambutan Pimpinan Madrasah</h2>
+      <p class="section-subtitle mb-3">
+        Berikut disampaikan sambutan resmi sebagai pengantar bagi pengunjung website madrasah.
+      </p>
       <div class="profile-card">
         <div class="content-copy">
           <?= $sambutan->content ?>
@@ -380,8 +383,8 @@
   <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
     <div>
       <div class="section-eyebrow"><i class="fas fa-users"></i> Pengajar</div>
-      <h2 class="section-title">Tenaga pendidik yang mendampingi siswa</h2>
-      <p class="section-subtitle mb-0">Tampilan kartu dibuat ringkas agar mudah dibaca dan terasa rapi di layar kecil.</p>
+      <h2 class="section-title">Tenaga Pendidik</h2>
+      <p class="section-subtitle mb-0">Informasi tenaga pendidik ditampilkan dalam format kartu yang ringkas dan tertata.</p>
     </div>
   </div>
 
@@ -406,8 +409,8 @@
   <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
     <div>
       <div class="section-eyebrow"><i class="fas fa-newspaper"></i> Berita</div>
-      <h2 class="section-title">Informasi dan kabar terbaru</h2>
-      <p class="section-subtitle mb-0">Konten tampil sebagai kartu editorial yang lebih tenang dan mudah dipindai.</p>
+      <h2 class="section-title">Informasi dan Kegiatan Terbaru</h2>
+      <p class="section-subtitle mb-0">Konten ditampilkan dalam kartu informasi yang rapi dan mudah dibaca.</p>
     </div>
     <a class="soft-btn soft-btn-outline mt-3 mt-md-0" href="<?= base_url('blog') ?>">
       Lihat semua berita <i class="fas fa-arrow-right ml-2"></i>
