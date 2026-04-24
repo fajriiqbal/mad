@@ -20,7 +20,7 @@ class Sitecontent_model extends CI_Model {
 
 	private function path($key)
 	{
-		return $this->baseDir . $key . '.json';
+		return $this->baseDir . $key . '.ser';
 	}
 
 	public function get($key, array $defaults = [])
@@ -32,7 +32,7 @@ class Sitecontent_model extends CI_Model {
 			return (object) $defaults;
 		}
 
-		$content = json_decode(file_get_contents($path), true);
+		$content = @unserialize(file_get_contents($path));
 		if (!is_array($content)) {
 			$content = [];
 		}
@@ -44,10 +44,7 @@ class Sitecontent_model extends CI_Model {
 	{
 		$this->ensureDir();
 		$path = $this->path($key);
-		return (bool) file_put_contents(
-			$path,
-			json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
-		);
+		return (bool) file_put_contents($path, serialize($data), LOCK_EX);
 	}
 
 }
