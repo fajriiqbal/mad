@@ -421,7 +421,8 @@
     <?php if (!empty($berita)) : ?>
       <?php foreach($berita as $b) : ?>
         <article class="news-card">
-          <img src="<?= base_url('img/berita/thumbs/' . $b->photo) ?>" alt="<?= $b->title ?>">
+          <?php $thumb = !empty($b->photo) && is_file(FCPATH . 'img/berita/thumbs/' . $b->photo) ? base_url('img/berita/thumbs/' . $b->photo) : base_url('img/banner_area/bg.jpg'); ?>
+          <img src="<?= $thumb ?>" alt="<?= $b->title ?>">
           <div class="news-body">
             <h3 class="news-title"><?= $b->title ?></h3>
             <p class="news-text"><?= character_limiter($b->content, 90) ?></p>

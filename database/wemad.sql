@@ -303,6 +303,7 @@ CREATE TABLE `submenus` (
 INSERT INTO `submenus` (`id`, `menu_id`, `sub_title`, `sub_url`, `is_active`) VALUES
 (1, 1, 'Identitas Web', 'identitas', 'Y'),
 (2, 1, 'Sambutan', 'sambutan', 'Y'),
+(7, 1, 'Data Guru', 'dataguru', 'Y'),
 (3, 3, 'Banner', 'banner', 'Y'),
 (4, 3, 'Fasilitas', 'fasilitas', 'Y'),
 (5, 3, 'Berita', 'berita', 'Y'),

@@ -53,7 +53,8 @@
     <?php if (!empty($news)) : ?>
       <?php foreach($news as $n) : ?>
         <article class="news-card">
-          <img src="<?= base_url('img/berita/thumbs/' . $n->photo) ?>" alt="<?= $n->title ?>">
+          <?php $thumb = !empty($n->photo) && is_file(FCPATH . 'img/berita/thumbs/' . $n->photo) ? base_url('img/berita/thumbs/' . $n->photo) : base_url('img/banner_area/bg.jpg'); ?>
+          <img src="<?= $thumb ?>" alt="<?= $n->title ?>">
           <div class="news-body">
             <h3 class="news-title"><?= $n->title ?></h3>
             <p class="news-text"><?= character_limiter($n->content, 90) ?></p>

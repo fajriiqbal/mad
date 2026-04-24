@@ -20,6 +20,7 @@
 
 	<?php 
 		$menus = $this->menu->getMenu();
+		$hasDataGuru = false;
 
 		foreach($menus as $menu) :
 			$submenu = $this->menu->getSubmenu($menu->id);
@@ -35,6 +36,7 @@
 			<div id="collapse<?= $menu->id ?>" class="collapse" aria-labelledby="heading<?= $menu->id ?>" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 				<?php foreach($submenu as $sm) : ?>
+					<?php if (strtolower($sm->sub_url) === 'dataguru') $hasDataGuru = true; ?>
 					<a class="collapse-item" href="<?= base_url() . $sm->sub_url ?>"><?= $sm->sub_title ?></a>
 				<?php endforeach ?>
 				</div>
@@ -69,6 +71,15 @@
 			<span>Tata Tertib</span>
 		</a>
 	</li>
+
+	<?php if (!$hasDataGuru) : ?>
+	<li class="nav-item">
+		<a class="nav-link <?= (strpos($title ?? '', 'Guru') !== false) ? 'active' : '' ?>" href="<?= base_url('dataguru') ?>">
+			<i class="fas fa-fw fa-chalkboard-teacher"></i>
+			<span>Data Guru</span>
+		</a>
+	</li>
+	<?php endif; ?>
 
 	<!-- Sidebar Toggler (Sidebar) -->
 	<div class="text-center d-none d-md-inline">
