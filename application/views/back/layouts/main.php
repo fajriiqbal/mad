@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
 
@@ -79,7 +79,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Anda yakin ingin keluar ?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">Klik tombol "Logout" untuk keluar.</div>

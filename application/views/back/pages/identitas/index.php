@@ -37,7 +37,7 @@
 							<td><?= $content->meta_description ?></td>
 							<td><?= $content->meta_keyword ?></td>
 							<!-- <td>
-								<img src="<?= base_url('img/identitas/' . $content->photo) ?>" class="img-responsive" style="max-height:150px; max-width:150px";>
+								<img src="<?= base_url('img/identitas/' . $content->photo) ?>" class="img-responsive" style="max-height:150px; max-width:150px;">
 							</td> -->
 							<td>
 								<a href="<?= base_url('identitas/edit/' . $content->id); ?>" class="btn btn-warning btn-sm text-light">

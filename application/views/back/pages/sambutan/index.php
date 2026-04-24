@@ -15,7 +15,7 @@
                </button>   
             </div>
          <?php elseif($this->session->flashdata('error')) : ?>
-            <div class="alert alert-error alert-dismissible fade show" role="alert">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <?= $this->session->flashdata('error') ?>.
                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -40,7 +40,7 @@
 					<tr>
 						<td><?= $content->content ?></td>
 						<td>
-							<img src="<?= base_url('img/sambutan/' . $content->photo) ?>" class="img-responsive" style="max-height:150px; max-width:150px";>
+							<img src="<?= base_url('img/sambutan/' . $content->photo) ?>" class="img-responsive" style="max-height:150px; max-width:150px;">
 						</td>
 						<td>
 							<a href="<?= base_url('sambutan/edit/' . $content->id); ?>" class="btn btn-warning btn-sm text-light">

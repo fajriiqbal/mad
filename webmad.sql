@@ -231,6 +231,18 @@ CREATE TABLE `opening` (
   `photo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `site_contents`
+--
+
+CREATE TABLE `site_contents` (
+  `content_key` varchar(50) NOT NULL,
+  `content_value` longtext NOT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Dumping data untuk tabel `opening`
 --

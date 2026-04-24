@@ -31,7 +31,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<a href="<?= base_url('img/agenda/' . $content->photo) ?>" target="_blank"><img src="<?= base_url('img/agenda/' . $content->photo) ?>" class="img-responsive" style=" max-width:400px";/></a>
+								<a href="<?= base_url('img/agenda/' . $content->photo) ?>" target="_blank"><img src="<?= base_url('img/agenda/' . $content->photo) ?>" class="img-responsive" style="max-width:400px;"></a>
 							</td>
 							<td>
 								<a href="<?= base_url('jadwal/edit/' . $content->id); ?>" class="btn btn-warning btn-sm text-light">
