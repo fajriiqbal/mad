@@ -18,9 +18,6 @@
   <!-- Datatables -->
   <link href="<?= base_url() ?>asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-	<!-- Summernote -->
-  <link href="<?= base_url() ?>asset/vendor/summernote/dist/summernote-bs4.min.css" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="<?= base_url() ?>asset/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -112,29 +109,31 @@
    <!-- Page level plugins -->
    <script src="<?= base_url() ?>asset/vendor/chart.js/Chart.min.js"></script>
 
-	 <!-- Summernote -->
-   <script src="<?= base_url() ?>asset/vendor/summernote/dist/summernote-bs4.min.js"></script>
-
 	 <!-- Sweet Alert 2 -->
    <script src="<?= base_url() ?>asset/vendor/sweetalert2/sweetalert2.js"></script>
 
+	<?php if (!empty($use_summernote)) : ?>
 	<script>
-      $('#summernote').summernote({
-         height: 300,
-			toolbar: [
-				// [groupName, [list of button]]
-				['style', ['bold', 'italic', 'underline', 'clear', 'fontname']],
-				['misc', ['undo', 'redo']],
-				['font', ['strikethrough', 'superscript', 'subscript']],
-				['fontsize', ['fontsize']],
-				['color', ['color']],
-				['para', ['ul', 'ol', 'paragraph']],
-				['height', ['height']],
-				['insert', ['table', 'link', 'hr', 'fullscreen']],
-			],
-			placeholder: 'Masukkan konten berita disini...'
+      $(function () {
+         if ($.fn.summernote && $('#summernote').length) {
+            $('#summernote').summernote({
+               height: 300,
+				   toolbar: [
+						['style', ['bold', 'italic', 'underline', 'clear', 'fontname']],
+						['misc', ['undo', 'redo']],
+						['font', ['strikethrough', 'superscript', 'subscript']],
+						['fontsize', ['fontsize']],
+						['color', ['color']],
+						['para', ['ul', 'ol', 'paragraph']],
+						['height', ['height']],
+						['insert', ['table', 'link', 'hr', 'fullscreen']],
+					],
+					placeholder: 'Masukkan konten berita disini...'
+            });
+         }
       });
    </script>
+	<?php endif; ?>
 
 	<!-- For Datatable -->
    <?php 

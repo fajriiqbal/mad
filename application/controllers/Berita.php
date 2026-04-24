@@ -73,6 +73,7 @@ class Berita extends CI_Controller {
 
 	public function add()
 	{
+		$data['use_summernote'] = true;
 		if(!$_POST){
 			$input = (object) $this->berita->getDefaultValues();
 		}else{
@@ -124,6 +125,7 @@ class Berita extends CI_Controller {
 
 	public function edit($id)
 	{
+		$data['use_summernote'] = true;
 		if(!$_POST){
 			$input = (object) $this->berita->getDataById($id);
 		}else{
