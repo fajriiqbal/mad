@@ -44,10 +44,14 @@
     z-index: 40;
   }
 
+  .navbar-brand img{
+    max-height: 46px !important;
+  }
+
   .navbar .nav-link{
     font-weight: 600;
     color: var(--text) !important;
-    padding: 0.7rem 0.95rem !important;
+    padding: 0.65rem 0.9rem !important;
     border-radius: 999px;
   }
 
@@ -59,9 +63,9 @@
 
   .navbar .dropdown-menu{
     border: 1px solid var(--border);
-    border-radius: 18px;
+    border-radius: 16px;
     box-shadow: var(--shadow-soft);
-    padding: 10px;
+    padding: 8px;
   }
 
   .navbar .dropdown-item{
@@ -82,7 +86,7 @@
       border-left: 0;
       border-right: 0;
       box-shadow: none;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
     }
   }
 </style>

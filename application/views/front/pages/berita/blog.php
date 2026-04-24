@@ -44,9 +44,9 @@
 
 <section class="news-page">
   <div class="section-eyebrow"><i class="fas fa-newspaper"></i> Berita</div>
-  <h1 class="section-title mb-2">Berita sekolah yang terbaru</h1>
+  <h1 class="section-title mb-2">Berita dan Informasi Sekolah</h1>
   <p class="section-subtitle mb-4">
-    Semua artikel ditata seperti editorial cards agar tampil lebih premium dan nyaman dibaca.
+    Seluruh artikel disajikan dalam tampilan yang tenang, rapi, dan nyaman dibaca.
   </p>
 
   <div class="news-grid">
